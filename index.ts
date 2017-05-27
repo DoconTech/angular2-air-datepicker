@@ -19,7 +19,16 @@ export class AirDatepicker implements OnInit {
     airCalendar: AirCalendar;
 
     ngOnInit () {
+<<<<<<< HEAD
         this.airOptions = new AirOptions(this.airOptions || {} as AirOptions);
+=======
+        if (!this.airOptions) {
+            this.airOptions = new AirOptions;
+        }
+        if(!this.airOptions.hasOwnProperty('datepicker')){
+          this.airOptions['datepicker'] =true;
+        }
+>>>>>>> made datepicker option as optional
         this.airLanguage = LANGUAGES.get(this.airOptions.language);
         this.airCalendar = new AirCalendar(this.airDate, this.airOptions);
     }
