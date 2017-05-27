@@ -6,6 +6,7 @@ export class AirOptions {
     hourStep: number;
     minuteStep: number;
     enabledDateRanges: DateRange[];
+    datepicker:boolean;
 
     constructor (options: AirOptions = {} as AirOptions) {
         this.timepicker = !!options.timepicker;
@@ -15,6 +16,7 @@ export class AirOptions {
         this.hourStep = options.hourStep || 1;
         this.minuteStep = options.minuteStep || 1;
         this.enabledDateRanges = options.enabledDateRanges || [];
+        this.datepicker = true;
     }
 
     isDisabled (date: Date) {
