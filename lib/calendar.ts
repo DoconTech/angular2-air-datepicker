@@ -56,7 +56,7 @@ export class AirCalendar {
 
         if (firstDayOfMonth/* is not monday (0) */) {
             let daysInLastMonth = this.getDaysInMonth(this.month - 1);
-            for (let date = daysInLastMonth - firstDayOfMonth; date < daysInLastMonth; date++) {
+            for (let date = daysInLastMonth - firstDayOfMonth + 1; date <= daysInLastMonth; date++) {
                 this.airDays.push(new AirDay(date, weekend.progress(), true));
             }
         }
