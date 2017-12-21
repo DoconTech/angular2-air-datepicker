@@ -55,18 +55,4 @@ export class AirDatepicker implements OnInit {
       this.airChange.emit(this.airDate);
 
     }
-
-    setTodaysDate(){
-      this.airCalendar.today();
-      this.airDate.setTime(Date.parse(`${this.airCalendar.year}/${this.airCalendar.month + 1}/${this.airCalendar.date} ${this.airCalendar.hour}:${this.airCalendar.minute}`));
-
-      this.airChange.emit(this.airDate);
-    }
-    setTomorrowsDate(){
-      this.airCalendar.tomorrow();
-      this.airDate.setTime(Date.parse(`${this.airCalendar.year}/${this.airCalendar.month + 1}/${this.airCalendar.date} ${this.airCalendar.hour}:${this.airCalendar.minute}`));
-
-      this.airChange.emit(this.airDate);
-
-    }
 }
