@@ -62,6 +62,8 @@ export class AirCalendar {
             let airMonth = new AirMonth(this.month - 1, this.year);
             for (let date = daysInLastMonth - firstDayOfMonth; date < daysInLastMonth; date++) {
                 this.airDays.push(new AirDay(date, weekend.progress(), this.airOptions.isDisabled(new Date(`${airMonth.year}/${airMonth.month + 1}/${date}`)), true));
+            // for (let date = daysInLastMonth - firstDayOfMonth + 1; date <= daysInLastMonth; date++) {
+            //     this.airDays.push(new AirDay(date, weekend.progress(), true));
             }
         }
 
