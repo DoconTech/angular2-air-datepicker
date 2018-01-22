@@ -20,12 +20,6 @@ export class AirDatepicker implements OnInit {
 
     ngOnInit () {
         this.airOptions = new AirOptions(this.airOptions || {} as AirOptions);
-        // if (!this.airOptions) {
-        //     this.airOptions = new AirOptions;
-        // }
-        if(!this.airOptions.hasOwnProperty('datepicker')){
-          this.airOptions['datepicker'] =true;
-        }
         this.airLanguage = LANGUAGES.get(this.airOptions.language);
         this.airCalendar = new AirCalendar(this.airDate, this.airOptions);
     }
@@ -38,7 +32,7 @@ export class AirDatepicker implements OnInit {
     }
 
     setTime () {
-      this.airDate.setTime(+ Date.UTC(this.airCalendar.year, this.airCalendar.month, this.airCalendar.date, this.airCalendar.hour, this.airCalendar.minute));
+      this.airDate.setTime(+new Date(this.airCalendar.year, this.airCalendar.month, this.airCalendar.date, this.airCalendar.hour, this.airCalendar.minute));
       this.airChange.emit(this.airDate);
     }
 
